@@ -2,6 +2,14 @@
     box-sizing: border-box;
 }
 
+.assignment-heading {
+    text-align: center;
+}
+
+.button-color-on-click {
+    background-color: green;
+}
+
 .lift-and-status {
     display: flex;
     justify-content: center;
@@ -16,6 +24,17 @@
 .lift-status-pick {
     text-align: center;
     color:green;
+}
+
+.note {
+    text-align: center;
+    color:black;
+    font-weight: bold;
+}
+
+.note-color {
+    color:red;
+    font-weight: bold;
 }
 
 .lift-status-div {

@@ -162,6 +162,9 @@ function isLiftDoorsShouldOpen() {
     shouldWeOpenDoors = 1;
     for (let i = 0; i < liftRequestAndDestination.length; i++) {
       if (liftRequestAndDestination[i].from == liftPosition) {
+        document.getElementById(
+          `floor${liftRequestAndDestination[i].from}${liftRequestAndDestination[i].to}`
+        ).className = "";
         liftRequestAndDestination[i].from = null;
       }
     }
@@ -173,12 +176,16 @@ function isLiftDoorsShouldOpen() {
   ) {
     console.log(`Picking up Persons in Floor${liftPosition}`);
     liftStatusPick.textContent = `Picking up Persons in Floor${liftPosition}`;
+
     shouldWeOpenDoors = 1;
     for (let i = 0; i < liftRequestAndDestination.length; i++) {
       if (
         liftRequestAndDestination[i].from == liftPosition &&
         liftRequestAndDestination[i].to > liftPosition
       ) {
+        document.getElementById(
+          `floor${liftRequestAndDestination[i].from}${liftRequestAndDestination[i].to}`
+        ).className = "";
         liftRequestAndDestination[i].from = null;
       }
     }
@@ -196,6 +203,9 @@ function isLiftDoorsShouldOpen() {
         liftRequestAndDestination[i].from == liftPosition &&
         liftRequestAndDestination[i].to < liftPosition
       ) {
+        document.getElementById(
+          `floor${liftRequestAndDestination[i].from}${liftRequestAndDestination[i].to}`
+        ).className = "";
         liftRequestAndDestination[i].from = null;
       }
     }
@@ -247,6 +257,9 @@ function MoveUpOrDown(from) {
 
 function floorRequest(from, to) {
   liftRequestAndDestination.push({ from, to });
+  document
+    .getElementById(`floor${from}${to}`)
+    .classList.add("button-color-on-click");
   console.table(liftRequestAndDestination);
   if (liftState === "rest") {
     liftState = "moving";
