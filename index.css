@@ -1,0 +1,258 @@
+* {
+    box-sizing: border-box;
+}
+
+.lift-and-status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lift-status {
+    text-align: center;
+    color:blue;
+}
+
+.lift-status-pick {
+    text-align: center;
+    color:green;
+}
+
+.lift-status-div {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+}
+
+.lift-status-drop {
+    text-align: center;
+    color:red;
+}
+
+.lift-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: 100vh;
+}
+
+.lift {
+    display: flex;
+    justify-content: center;
+    height: 400px;
+    width: 100px;
+    border: solid black 1px;
+}
+
+.lift-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:99px;
+    width: 99px;
+    background-color: lightgrey;
+    overflow: hidden;
+    padding: 0px;
+}
+
+.left-door {
+    height: 99px;
+    width: 49.5px;
+    border: solid black 1px;
+    border-left: none;
+    background-color: grey;
+    margin-right: 0px;
+
+}
+
+.left-door-opens {
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-name: left-door-open;
+}
+
+.left-door-closes {
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-name: left-door-close;
+}
+
+.right-door {
+    height: 99px;
+    width: 49.5px;
+    border: solid black 1px;
+    border-right: none;
+    background-color: grey;
+    margin-left: 0px;
+
+}
+
+.right-door-opens {
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-name: right-door-open;
+}
+
+.right-door-closes {
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-name: right-door-close;
+}
+
+.controls {
+    margin:60px;
+}
+
+
+
+.initial-position {
+    margin-top: 300px;
+}
+
+
+
+
+/*********************************************************************************/
+
+.lift-moving-0-to-1 {
+    animation-fill-mode: forwards;
+    animation-timing-function:ease-out;
+    animation-duration: 5s;
+    margin-top:300px;  
+    animation-name: moveup0to1; 
+    
+}
+
+
+
+/*********************************************************************************/
+
+.lift-moving-1-to-2 {
+    animation-fill-mode: forwards;
+    animation-timing-function:ease-out;
+    animation-duration: 5s;
+    margin-top:200px;  
+    animation-name: moveup1to2; 
+
+}
+
+
+/*********************************************************************************/
+
+.lift-moving-2-to-3 {
+    animation-fill-mode: forwards;
+    animation-timing-function:ease-out;
+    animation-duration: 5s;
+    margin-top:100px;  
+    animation-name: moveup2to3; 
+
+}
+
+/*********************************************************************************/
+
+.lift-moving-3-to-2 {
+    animation-fill-mode: forwards;
+    animation-timing-function:ease-out;
+    animation-duration: 5s;
+    margin-top:0px;  
+    animation-name: movedown3to2; 
+
+}
+
+
+/*********************************************************************************/
+
+.lift-moving-2-to-1 {
+    animation-fill-mode: forwards;
+    animation-timing-function:ease-out;
+    animation-duration: 5s;
+    margin-top:100px;  
+    animation-name: movedown2to1; 
+
+}
+
+
+/*********************************************************************************/
+
+.lift-moving-1-to-0 {
+    animation-fill-mode: forwards;
+    animation-timing-function:ease-out;
+    animation-duration: 5s;
+    margin-top:200px;  
+    animation-name: movedown1to0; 
+
+}
+
+/*********************************************************************************/
+@keyframes left-door-open {
+    from{margin-right: 0px;}
+    to{margin-right: 49.5px;}
+}
+
+@keyframes left-door-close {
+    from {margin-right: 49.5px;}
+    to{margin-right: 0px;}
+}
+
+@keyframes right-door-open {
+    from{margin-left: 0px;}
+    to{margin-left: 49.5px;}
+}
+
+@keyframes right-door-close {
+    from {margin-left: 49.5px;}
+    to{margin-left: 0px;}
+}
+
+
+/*********************************************************************************/
+
+
+
+@keyframes moveup0to1 {
+    from {margin-top:300px;}
+    to{margin-top: 200px;}
+}
+
+
+
+/*********************************************************************************/
+
+@keyframes moveup1to2 {
+    from {margin-top:200px;}
+    to{margin-top: 100px;}
+}
+
+
+/*********************************************************************************/
+
+@keyframes moveup2to3 {
+    from {margin-top:100px;}
+    to{margin-top: 0px;}
+}
+
+/*********************************************************************************/
+
+@keyframes movedown3to2 {
+    from {margin-top:0px;}
+    to{margin-top: 100px;}
+}
+
+
+
+/*********************************************************************************/
+
+@keyframes movedown2to1 {
+    from {margin-top:100px;}
+    to{margin-top: 200px;}
+}
+
+
+
+/*********************************************************************************/
+
+@keyframes movedown1to0 {
+    from {margin-top:200px;}
+    to{margin-top: 300px;}
+}

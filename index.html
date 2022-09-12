@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel = "stylesheet" href = "index.css" />
+    </head>
+    <body>
+        <div class = "lift-and-status">
+        <div class = "lift-container">
+            <div class = "lift">
+                <div id = "liftBox" class = "lift-box initial-position " >
+                    <div id = "leftDoor" class="left-door"></div>
+                    <div id = "rightDoor" class="right-door"></div>
+                </div>
+            </div>
+            <div>
+                <div class = "controls">
+                    
+                    <button onclick="floorRequest(3,0)" id = "floor30" type = "button">0</button>
+                    <button onclick="floorRequest(3,1)" id = "floor31" type = "button">1</button>
+                    <button onclick="floorRequest(3,2)" id = "floor32" type = "button">2</button>
+                    <lable>Third Floor</lable>
+                </div>
+                <div class = "controls">
+                    <button onclick="floorRequest(2,0)" id = "floor20" type = "button">0</button>
+                    <button onclick="floorRequest(2,1)" id = "floor21" type = "button">1</button>
+                    <button onclick="floorRequest(2,3)" id = "floor23" type = "button">3</button>
+                    <lable>Second Floor</lable>
+                </div>
+                <div class = "controls">
+                    <button onclick="floorRequest(1,0)" id = "floor10" type = "button">0</button>
+                    <button onclick="floorRequest(1,2)" id = "floor12" type = "button">2</button>
+                    <button onclick="floorRequest(1,3)" id = "floor13" type = "button">3</button>
+                    <lable>First Floor</lable>
+                </div>
+                <div class = "controls">
+                    <button onclick="floorRequest(0,1)" id = "floor01" type = "button">1</button>
+                    <button onclick="floorRequest(0,2)" id = "floor02" type = "button">2</button>
+                    <button onclick="floorRequest(0,3)" id = "floor03" type = "button">3</button>
+                    <lable>Ground Floor</lable>
+                </div>
+            </div>
+        </div>
+        <div class = "lift-status-div">
+            <h3 class="lift-status" id= "liftStatus">Lift is at Rest</h3>
+            <h3 class="lift-status-pick" id= "liftStatusPick">Pick Status</h3>
+            <h3 class="lift-status-drop" id= "liftStatusDrop">Drop Status</h3>
+        </div>
+    </div>
+        
+        <script src = "main.js" ></script>
+    </body>
+</html>
