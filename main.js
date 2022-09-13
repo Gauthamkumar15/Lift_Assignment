@@ -123,6 +123,7 @@ function openDoorsAndCloseDoors() {
 }
 
 function isLiftDoorsShouldOpen() {
+  console.log("isLiftDoorsShouldOpen");
   shouldWeOpenDoors = 0;
   console.log(
     liftRequestAndDestination.filter(
@@ -235,7 +236,9 @@ function isLiftDoorsShouldOpen() {
   }
 }
 
-function MoveUpOrDown(from) {
+function MoveUpOrDown(from, to) {
+  console.log(liftPosition);
+  console.log("MoveuporDown");
   if (liftPosition == 0) {
     liftDirection = "up";
     liftStatus.textContent = "Lift Moving";
@@ -244,11 +247,17 @@ function MoveUpOrDown(from) {
     liftDirection = "down";
     liftStatus.textContent = "Lift Moving";
     isLiftDoorsShouldOpen();
-  } else if (from > liftPosition) {
+  } else if (
+    from > liftPosition ||
+    (from == liftPosition && to > liftPosition)
+  ) {
     liftDirection = "up";
     liftStatus.textContent = "Lift Moving";
     isLiftDoorsShouldOpen();
-  } else if (from < liftPosition) {
+  } else if (
+    from < liftPosition ||
+    (from == liftPosition && to < liftPosition)
+  ) {
     liftDirection = "down";
     liftStatus.textContent = "Lift Moving";
     isLiftDoorsShouldOpen();
@@ -264,7 +273,7 @@ function floorRequest(from, to) {
   if (liftState === "rest") {
     liftState = "moving";
     let id = setTimeout(() => {
-      MoveUpOrDown(from);
+      MoveUpOrDown(from, to);
     }, 5000);
   }
 }
